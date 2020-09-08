@@ -243,6 +243,9 @@ COLONNA CHAT
   position: relative;
   margin-bottom: 5px;
 }
+.message-box > p {
+  word-wrap: break-word;
+}
 .message-box-send {
   background-color: #D5F9BA;
 }
@@ -258,7 +261,6 @@ COLONNA CHAT
 }
 .template-send, .template-received {
   display: none;
-  
 }
 
 
