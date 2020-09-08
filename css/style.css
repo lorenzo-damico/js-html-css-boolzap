@@ -8,15 +8,15 @@
   height: 100vh;
   position: relative;
 }
-.background-container-green {
+.background-green {
   height: 20vh;
   background-color: #009688; /* verde */
 }
-.background-container-grey {
+.background-grey {
   height: 80vh;
   background-color: #DBDBD2; /* grigio */
 }
-.screen-container {
+.background-overlay {
   /* background-color: black; */
   position: absolute;
   top: 0;
@@ -27,7 +27,7 @@
   display: flex;
 }
 
-.screen-window {
+.container-window {
   background-color: blue;
   height: calc(100vh - 6%);
   width: 1024px;
