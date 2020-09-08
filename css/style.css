@@ -222,7 +222,40 @@ COLONNA CHAT
   width: 100%;
   background-image: url(../img/mine.jpg);
   background-size: 350px;
+  padding: 40px 60px 0;
 }
+.box-message-container {
+  width: 100%;
+  display: flex;
+}
+.box-message-container-send {
+  justify-content: flex-end;
+}
+.box-message-container-received {
+  justify-content: flex-start;
+}
+.message-box {
+  max-width: 50%;
+  padding: 13px 30px 13px 13px;
+  border-radius: 10px;
+  font-size: 11px;
+  position: relative;
+}
+.message-box-send {
+  background-color: #D5F9BA;
+}
+.message-box-received {
+  background-color: #fff;
+}
+
+.message-box-time {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 8px;
+  color: lightgrey;
+}
+
 
 /* SEZIONE SCRITTURA */
 .chat-write-section {
