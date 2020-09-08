@@ -54,7 +54,6 @@ h2 {
 
 /* CONTENITORE FINESTRA */
 .container-window {
-  background-color: blue;
   height: 100%;
   width: 100%;
   max-width: 1024px;
@@ -63,14 +62,12 @@ h2 {
 }
 
 .contact-column {
-  background-color: red;
   height: 100%;
   width: 35%;
   border-right: 1px solid lightgrey;
 }
 
 .chat-column {
-  background-color: green;
   height: 100%;
   width: 65%;
 }
@@ -160,7 +157,7 @@ COLONNA CONTATTI
   height: calc(100% - (50px + 55px + 30px));
   width: 100%;
   background-color: #fff;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .contact_box {
   height: 50px;
@@ -223,7 +220,7 @@ COLONNA CHAT
   background-image: url(../img/mine.jpg);
   background-size: 350px;
   padding: 40px 60px 0;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .box-message-container {
   width: 100%;
