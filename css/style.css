@@ -3,6 +3,24 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: 'Lato', sans-serif;
+}
+/* MIX */
+.list_inline {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.list_inline > li {
+  margin: 0 2px;
+}
+.list_inline > li > a {
+  color: #B1B1B1;
+  padding: 0 5px;
+}
 
 /* CONTENITORE PAGINA */
 .background-container {
@@ -10,11 +28,11 @@
   position: relative;
 }
 .background-green {
-  height: 20vh;
+  height: 15vh;
   background-color: #009688; /* verde */
 }
 .background-grey {
-  height: 80vh;
+  height: 85vh;
   background-color: #DBDBD2; /* grigio sfondo */
 }
 .background-overlay {
@@ -60,8 +78,21 @@ COLONNA CONTATTI
   height: 50px;
   width: 100%;
   background-color: #EAEAEA; /* grigio user */
+  display: flex;
+  padding: 7px;
 }
-
+.logo-user {
+  height: 100%;
+  width: 20%;
+}
+.logo-user > img {
+  height: 100%;
+  border-radius: 50%;
+}
+.user-icons {
+  height: 100%;
+  width: 80%;
+}
 /* BARRA NOTIFICHE */
 .notification-section {
   height: 55px;
@@ -94,6 +125,34 @@ COLONNA CHAT
   height: 50px;
   width: 100%;
   background-color: #EAEAEA; /* grigio user */
+  display: flex;
+  padding: 7px;
+}
+.wrapper-contatto {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo-contatto {
+  height: 100%;
+}
+.logo-contatto > img {
+  height: 100%;
+  border-radius: 50%;
+}
+.info-contatto {
+  width: 100%;
+  font-size: 9px;
+  margin-left: 10px;
+}
+.info-contatto  > p {
+  color: grey;
+  font-weight: bold;
+}
+.contatto-icons {
+  height: 100%;
+  width: 100%;
 }
 
 /* FINESTRA CHAT */
