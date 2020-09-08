@@ -160,6 +160,7 @@ COLONNA CONTATTI
   height: calc(100% - (50px + 55px + 30px));
   width: 100%;
   background-color: #fff;
+  overflow-y: scroll;
 }
 .contact_box {
   height: 50px;
@@ -173,6 +174,7 @@ COLONNA CONTATTI
   font-size: 8px;
   padding-top: 5px;
 }
+
 /*
 ----------------
 COLONNA CHAT
@@ -227,4 +229,19 @@ COLONNA CHAT
   height: 50px;
   width: 100%;
   background-color: #F3EEEA; /* grigio write */
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.chat-write-section > input {
+  width: 85%;
+  border: none;
+  height: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 11px;
+}
+.chat-write-section > a {
+  color: #6B7376;
 }
