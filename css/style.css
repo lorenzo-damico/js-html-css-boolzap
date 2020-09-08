@@ -8,10 +8,13 @@ body {
 }
 h2 {
   font-size: 11px;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 /* MIX */
+.bg_grey {
+  background-color: #E9EBEB;
+}
 .list_inline {
   height: 100%;
   list-style: none;
@@ -143,6 +146,7 @@ COLONNA CONTATTI
 .search-wrapper > input {
   border: none;
   width: 100%;
+  height: 100%;
   font-size: 11px;
 }
 .search-wrapper > a {
@@ -157,7 +161,18 @@ COLONNA CONTATTI
   width: 100%;
   background-color: #fff;
 }
-
+.contact_box {
+  height: 50px;
+  padding: 6px 6px 6px 12px;
+  border-bottom: 1px solid lightgrey;
+}
+.message_time {
+  align-self: flex-start;
+  color: lightgrey;
+  font-weight: 700;
+  font-size: 8px;
+  padding-top: 5px;
+}
 /*
 ----------------
 COLONNA CHAT
