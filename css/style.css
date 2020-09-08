@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+/* CONTENITORE PAGINA */
 .background-container {
   height: 100vh;
   position: relative;
@@ -14,10 +15,9 @@
 }
 .background-grey {
   height: 80vh;
-  background-color: #DBDBD2; /* grigio */
+  background-color: #DBDBD2; /* grigio sfondo */
 }
 .background-overlay {
-  /* background-color: black; */
   position: absolute;
   top: 0;
   left: 0;
@@ -26,10 +26,87 @@
   padding: 15px;
 }
 
+/* CONTENITORE FINESTRA */
 .container-window {
   background-color: blue;
-  height: calc(100vh - 30px);
+  height: 100%;
   width: 100%;
   max-width: 1024px;
   margin: auto;
+  display: flex;
+}
+
+.contact-column {
+  background-color: red;
+  height: 100%;
+  width: 35%;
+  border-right: 1px solid lightgrey;
+}
+
+.chat-column {
+  background-color: green;
+  height: 100%;
+  width: 65%;
+}
+
+/*
+----------------
+COLONNA CONTATTI
+----------------
+*/
+
+/* BARRA UTENTE */
+.user-section {
+  height: 50px;
+  width: 100%;
+  background-color: #EAEAEA; /* grigio user */
+}
+
+/* BARRA NOTIFICHE */
+.notification-section {
+  height: 55px;
+  width: 100%;
+  background-color: #8EDAFC; /* azzurro */
+}
+
+/* BARRA RICERCA */
+.search-section {
+  height: 30px;
+  width: 100%;
+  background-color: #FAFAFA; /* grigio chiaro search */
+}
+
+/* LISTA CONTATTI */
+.contact-list-section {
+  height: calc(100% - (50px + 55px + 30px));
+  width: 100%;
+  background-color: #fff;
+}
+
+/*
+----------------
+COLONNA CHAT
+----------------
+*/
+
+/* INFO CONTATTO */
+.chat-tools-section {
+  height: 50px;
+  width: 100%;
+  background-color: #EAEAEA; /* grigio user */
+}
+
+/* FINESTRA CHAT */
+.chat-screen-section {
+  height: calc(100% - (50px + 50px));
+  width: 100%;
+  background-image: url(../img/mine.jpg);
+  background-size: 350px;
+}
+
+/* SEZIONE SCRITTURA */
+.chat-write-section {
+  height: 50px;
+  width: 100%;
+  background-color: #F3EEEA; /* grigio write */
 }
