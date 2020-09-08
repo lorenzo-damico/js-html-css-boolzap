@@ -223,6 +223,7 @@ COLONNA CHAT
   background-image: url(../img/mine.jpg);
   background-size: 350px;
   padding: 40px 60px 0;
+  overflow-y: scroll;
 }
 .box-message-container {
   width: 100%;
@@ -240,6 +241,7 @@ COLONNA CHAT
   border-radius: 10px;
   font-size: 11px;
   position: relative;
+  margin-bottom: 5px;
 }
 .message-box-send {
   background-color: #D5F9BA;
@@ -247,13 +249,16 @@ COLONNA CHAT
 .message-box-received {
   background-color: #fff;
 }
-
 .message-box-time {
   position: absolute;
   bottom: 5px;
   right: 5px;
   font-size: 8px;
   color: lightgrey;
+}
+.template-send, .template-received {
+  display: none;
+  
 }
 
 
