@@ -7,7 +7,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 h2 {
-  font-size: 11px;
+  font-size: 13px;
   margin-bottom: 5px;
 }
 
@@ -117,7 +117,7 @@ COLONNA CONTATTI
   color: #8EDAFC;
 }
 .notification-info {
-  font-size: 9px;
+  font-size: 10px;
   margin-left: 10px;
 }
 .notification-info > a {
@@ -201,7 +201,7 @@ COLONNA CHAT
 }
 .info-contatto {
   width: 100%;
-  font-size: 9px;
+  font-size: 11px;
   margin-left: 10px;
 }
 .info-contatto  > p {
