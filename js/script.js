@@ -14,15 +14,13 @@ $(document).ready(function () {
   }
 
   // Funzione che scrive il messaggio.
-  function writeMessage() {
+  function writeMessage(inputValue) {
 
-    var inputValue = $("#writer").val();
     var elemento = $(".template-send .box-message-container").clone();
     var time = currentTime();
     elemento.find("p").text(inputValue);
     elemento.find(".message-box-time").text(time);
     $(".chat-screen-section").append(elemento);
-    $("#writer").val("");
   }
 
   // Funzione che risponde al messaggio.
@@ -42,12 +40,13 @@ $(document).ready(function () {
       if (event.which == 13) {
         var inputValue = $("#writer").val();
         if (inputValue != "") {
-          writeMessage();
+          writeMessage(inputValue);
           setTimeout(
             function () {
               answerMessage("OK");
             }, 1000
           );
+          $("#writer").val("");
         }
       }
     }
@@ -58,12 +57,13 @@ $(document).ready(function () {
     function () {
       var inputValue = $("#writer").val();
       if (inputValue != "") {
-        writeMessage();
+        writeMessage(inputValue);
         setTimeout(
           function () {
             answerMessage("OK");
           }, 1000
         );
+        $("#writer").val("");
       }
     }
   );
