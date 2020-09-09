@@ -74,7 +74,7 @@ $(document).ready(function () {
       $(".contact_box").each(
         function () {
           $(this).show();
-          var searchValue = $("#search-writer").val();
+          var searchValue = $("#search-writer").val().toLowerCase();
           if (searchValue != "") {
             var nomeContatto = $(this).find("h2").text().toLowerCase();
             var esitoControllo = nomeContatto.includes(searchValue);
