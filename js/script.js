@@ -68,6 +68,24 @@ $(document).ready(function () {
     }
   );
 
+  // Cerco contatto al click sulla barra di ricerca.
+  $("#search-writer").keyup(
+    function (event) {
+      $(".contact_box").each(
+        function () {
+          $(this).show();
+          var searchValue = $("#search-writer").val();
+          if (searchValue != "") {
+            var nomeContatto = $(this).find("h2").text().toLowerCase();
+            var esitoControllo = nomeContatto.includes(searchValue);
+            if (esitoControllo == false) {
+              $(this).hide();
+            }
+          }
+        }
+      );
+    }
+  );
 
 
 
