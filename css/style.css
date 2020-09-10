@@ -139,6 +139,7 @@ COLONNA CONTATTI
   height: 100%;
   display: flex;
   align-items: center;
+  box-shadow: 0px 0px 2px #eee;
 }
 .search-wrapper > input {
   border: none;

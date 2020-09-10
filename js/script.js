@@ -68,25 +68,41 @@ $(document).ready(function () {
     }
   );
 
-  // Cerco contatto al click sulla barra di ricerca.
-  $("#search-writer").keyup(
-    function (event) {
-      $(".contact_box").each(
-        function () {
-          $(this).show();
-          var searchValue = $("#search-writer").val().toLowerCase();
-          if (searchValue != "") {
-            var nomeContatto = $(this).find("h2").text().toLowerCase();
-            var esitoControllo = nomeContatto.includes(searchValue);
-            if (esitoControllo == false) {
-              $(this).hide();
-            }
-          }
-        }
-      );
-    }
-  );
+  // Cerco contatto digitando sulla barra di ricerca. Non funziona incollando con il mouse.
 
+  // $("#search-writer").keyup(
+  //   function (event) {
+  //     $(".contact_box").each(
+  //       function () {
+  //         var searchValue = $("#search-writer").val().toLowerCase();
+  //         var nomeContatto = $(this).find("h2").text().toLowerCase();
+  //         var esitoControllo = nomeContatto.includes(searchValue);
+  //         if (esitoControllo == false) {
+  //           $(this).hide();
+  //         } else {
+  //           $(this).show();
+  //         }
+  //       }
+  //     );
+  //   }
+  // );
+
+  // Con questo metodo prende anche l'inserimento con l'incolla del mouse.
+  
+  $("#search-writer").on("input", function(){
+    $(".contact_box").each(
+      function () {
+        var searchValue = $("#search-writer").val().toLowerCase();
+        var nomeContatto = $(this).find("h2").text().toLowerCase();
+        var esitoControllo = nomeContatto.includes(searchValue);
+        if (esitoControllo == false) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+      }
+    );
+  });
 
 
 
