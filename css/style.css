@@ -278,9 +278,11 @@ COLONNA CHAT
   background-color: #fff;
   text-align: left;
   display: none;
+  position: absolute;
+  right: -30px;
+  top: 35px;
 }
 .dropdown-menu li {
- border-bottom: 1px solid grey;
  padding: 10px;
 }
 .dropdown-menu a {

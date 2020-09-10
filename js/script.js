@@ -43,7 +43,7 @@ $(document).ready(function () {
           writeMessage(inputValue);
           setTimeout(
             function () {
-              answerMessage("OK");
+              answerMessage("i");
             }, 1000
           );
           $("#writer").val("");
@@ -105,11 +105,6 @@ $(document).ready(function () {
   });
 
   // Al click sull'icona apro il menu a tendina.
-  // $(".open-menu").click(
-  //   function () {
-  //     $(this).children(".dropdown-menu").toggle();
-  //   }
-  // );
 
   $(document).on("click", ".open-menu",
     function () {
@@ -118,9 +113,9 @@ $(document).ready(function () {
   );
 
   // Quando esco dal menu si nasconde.
-  $(document).on("mouseleave", ".open-menu",
+  $(document).on("mouseleave", ".message-box",
     function () {
-      $(this).children(".dropdown-menu").hide();
+      $(this).find(".dropdown-menu").hide();
     }
   );
 
