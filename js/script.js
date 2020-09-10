@@ -20,7 +20,7 @@ $(document).ready(function () {
     var time = currentTime();
     elemento.find("p").text(inputValue);
     elemento.find(".message-box-time").text(time);
-    $(".chat-screen-section").append(elemento);
+    $(".chat-screen-section.active").append(elemento);
   }
 
   // Funzione che risponde al messaggio.
@@ -30,7 +30,7 @@ $(document).ready(function () {
     var time = currentTime();
     elemento.find("p").text(answerValue);
     elemento.find(".message-box-time").text(time);
-    $(".chat-screen-section").append(elemento);
+    $(".chat-screen-section.active").append(elemento);
   }
 
 
@@ -43,7 +43,7 @@ $(document).ready(function () {
           writeMessage(inputValue);
           setTimeout(
             function () {
-              answerMessage("i");
+              answerMessage("OK");
             }, 1000
           );
           $("#writer").val("");
@@ -123,6 +123,23 @@ $(document).ready(function () {
   $(document).on("click", ".delete-message",
     function () {
       $(this).parents(".box-message-container").remove();
+    }
+  );
+
+  // Al click su un contatto, apro la chat corrispondente.
+  $(".contact_box").click(
+    function () {
+      if ($(this).hasClass("active") == false) {
+        $(".contact_box").removeClass("active");
+        $(".chat-screen-section").removeClass("active");
+        $(".chat-tools-section img").removeClass("active");
+        $(".chat-tools-section h2").removeClass("active");
+        var indice = $(this).index();
+        $(this).addClass("active");
+        $(".chat-screen-section").eq(indice).addClass("active");
+        $(".chat-tools-section img").eq(indice).addClass("active");
+        $(".chat-tools-section h2").eq(indice).addClass("active");
+      }
     }
   );
 
