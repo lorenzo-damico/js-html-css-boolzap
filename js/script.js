@@ -88,7 +88,7 @@ $(document).ready(function () {
   // );
 
   // Con questo metodo prende anche l'inserimento con l'incolla del mouse.
-  
+
   $("#search-writer").on("input", function(){
     $(".contact_box").each(
       function () {
@@ -104,6 +104,32 @@ $(document).ready(function () {
     );
   });
 
+  // Al click sull'icona apro il menu a tendina.
+  // $(".open-menu").click(
+  //   function () {
+  //     $(this).children(".dropdown-menu").toggle();
+  //   }
+  // );
+
+  $(document).on("click", ".open-menu",
+    function () {
+      $(this).children(".dropdown-menu").toggle();
+    }
+  );
+
+  // Quando esco dal menu si nasconde.
+  $(document).on("mouseleave", ".open-menu",
+    function () {
+      $(this).children(".dropdown-menu").hide();
+    }
+  );
+
+  // Al click su elimina messaggio, rimuovo il messaggio.
+  $(document).on("click", ".delete-message",
+    function () {
+      $(this).parents(".box-message-container").remove();
+    }
+  );
 
 
 });

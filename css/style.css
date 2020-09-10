@@ -257,6 +257,36 @@ COLONNA CHAT
   font-size: 8px;
   color: lightgrey;
 }
+.open-menu {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+  text-align: right;
+  z-index: 1;
+  white-space: nowrap;
+  display: none;
+}
+.open-menu > a {
+  font-size: 15px;
+  color: #ccc;
+}
+.message-box:hover .open-menu {
+  display: block;
+}
+.dropdown-menu {
+  list-style: none;
+  background-color: #fff;
+  text-align: left;
+  display: none;
+}
+.dropdown-menu li {
+ border-bottom: 1px solid grey;
+ padding: 10px;
+}
+.dropdown-menu a {
+  text-decoration: none;
+  color: #000;
+}
 .template-send, .template-received {
   display: none;
 }
