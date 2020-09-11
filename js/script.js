@@ -21,6 +21,8 @@ $(document).ready(function () {
     elemento.find("p").text(inputValue);
     elemento.find(".message-box-time").text(time);
     $(".chat-screen-section.active").append(elemento);
+    var currentHeight = $(".chat-screen-section.active").height();
+    $(".chat-screen-section.active").scrollTop(currentHeight);
   }
 
   // Funzione che risponde al messaggio.
@@ -31,6 +33,10 @@ $(document).ready(function () {
     elemento.find("p").text(answerValue);
     elemento.find(".message-box-time").text(time);
     $(".chat-screen-section.active").append(elemento);
+    var currentHeight = $(".chat-screen-section.active").height();
+    $(".chat-screen-section.active").scrollTop(currentHeight);
+
+    $(".contact-box.active .message-time").text(time);
   }
 
 
@@ -72,7 +78,7 @@ $(document).ready(function () {
 
   // $("#search-writer").keyup(
   //   function (event) {
-  //     $(".contact_box").each(
+  //     $(".contact-box").each(
   //       function () {
   //         var searchValue = $("#search-writer").val().toLowerCase();
   //         var nomeContatto = $(this).find("h2").text().toLowerCase();
@@ -90,7 +96,7 @@ $(document).ready(function () {
   // Con questo metodo prende anche l'inserimento con l'incolla del mouse.
 
   $("#search-writer").on("input", function(){
-    $(".contact_box").each(
+    $(".contact-box").each(
       function () {
         var searchValue = $("#search-writer").val().toLowerCase();
         var nomeContatto = $(this).find("h2").text().toLowerCase();
@@ -126,19 +132,24 @@ $(document).ready(function () {
     }
   );
 
-  // Al click su un contatto, apro la chat corrispondente.
-  $(".contact_box").click(
+  // Al click su un contatto, apro la chat corrispondente e aggiorno le info del contatto.
+  $(".contact-box").click(
     function () {
       if ($(this).hasClass("active") == false) {
-        $(".contact_box").removeClass("active");
+        $(".contact-box").removeClass("active");
         $(".chat-screen-section").removeClass("active");
-        $(".chat-tools-section img").removeClass("active");
-        $(".chat-tools-section h2").removeClass("active");
-        var indice = $(this).index();
+
+        var indice = $(".contact-box").index(this);
+
         $(this).addClass("active");
         $(".chat-screen-section").eq(indice).addClass("active");
-        $(".chat-tools-section img").eq(indice).addClass("active");
-        $(".chat-tools-section h2").eq(indice).addClass("active");
+
+        var img = $(this).find("img").attr("src");
+        var nome = $(this).find("h2").text();
+        var tempo = $(this).find(".message-time").text();
+        $(".chat-tools-section img").attr("src", img);
+        $(".chat-tools-section h2").text(nome);
+        $(".chat-tools-section time").text(tempo);
       }
     }
   );

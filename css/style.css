@@ -157,18 +157,18 @@ COLONNA CONTATTI
   background-color: #fff;
   overflow-y: scroll;
 }
-.contact_box {
+.contact-box {
   cursor: pointer;
   height: 50px;
   padding: 6px 6px 6px 12px;
   border-bottom: 1px solid lightgrey;
 }
-.contact_box.active {
+.contact-box.active {
   background-color: #E9EBEB;
 }
-.message_time {
+.message-time {
   align-self: flex-start;
-  color: lightgrey;
+  color: grey;
   font-weight: 700;
   font-size: 8px;
   padding-top: 5px;
@@ -201,22 +201,10 @@ COLONNA CHAT
   height: 100%;
   border-radius: 50%;
 }
-.chat-tools-section .logo-contatto > img {
-  display: none;
-}
-.chat-tools-section .logo-contatto > img.active {
-  display: inline-block;
-}
 .info-contatto {
   width: 100%;
   font-size: 11px;
   margin-left: 10px;
-}
-.chat-tools-section .info-contatto > h2 {
-  display: none;
-}
-.chat-tools-section .info-contatto > h2.active {
-  display: block;
 }
 .info-contatto > p {
   color: grey;
