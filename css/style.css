@@ -160,11 +160,10 @@ COLONNA CONTATTI
 .contact-box {
   cursor: pointer;
   height: 50px;
-  padding: 6px 6px 6px 12px;
+  padding: 6px 12px 6px 12px;
   border-bottom: 1px solid lightgrey;
 }
-.contact-box p {
-  max-width: 150px;
+.contact-box .info-contatto {
   white-space: nowrap;
   overflow: hidden;
 }
@@ -191,11 +190,11 @@ COLONNA CHAT
   width: 100%;
   background-color: #EAEAEA; /* grigio user */
   display: flex;
+  justify-content: space-between;
   padding: 7px;
 }
 .wrapper-contatto {
   height: 100%;
-  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -217,7 +216,6 @@ COLONNA CHAT
 }
 .contatto-icons {
   height: 100%;
-  width: 100%;
 }
 /* FINESTRA CHAT */
 .chat-screen-section {
@@ -235,12 +233,10 @@ COLONNA CHAT
 .box-message-container {
   width: 100%;
   display: flex;
+  justify-content: flex-start
 }
-.box-message-container-send {
+.send {
   justify-content: flex-end;
-}
-.box-message-container-received {
-  justify-content: flex-start;
 }
 .message-box {
   max-width: 50%;
@@ -249,15 +245,13 @@ COLONNA CHAT
   font-size: 13px;
   position: relative;
   margin-bottom: 5px;
+  background-color: #fff;
+}
+.send > .message-box {
+  background-color: #D5F9BA;
 }
 .message-box > p {
   word-wrap: break-word;
-}
-.message-box-send {
-  background-color: #D5F9BA;
-}
-.message-box-received {
-  background-color: #fff;
 }
 .message-box-time {
   position: absolute;
@@ -298,7 +292,7 @@ COLONNA CHAT
   text-decoration: none;
   color: #000;
 }
-.template-send, .template-received {
+.template {
   display: none;
 }
 

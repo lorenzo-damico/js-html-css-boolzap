@@ -16,8 +16,9 @@ $(document).ready(function () {
   // Funzione che scrive il messaggio.
   function writeMessage(inputGenerico) {
 
-    var elemento = $(".template-send .box-message-container").clone();
+    var elemento = $(".template .box-message-container").clone();
     var time = currentTime();
+    elemento.addClass("send");
     elemento.find("p").text(inputGenerico);
     elemento.find(".message-box-time").text(time);
     $(".chat-screen-section.active").append(elemento);
@@ -36,7 +37,7 @@ $(document).ready(function () {
   // Funzione che risponde al messaggio.
   function answerMessage(answerValue) {
 
-    var elemento = $(".template-received .box-message-container").clone();
+    var elemento = $(".template .box-message-container").clone();
     var time = currentTime();
     elemento.find("p").text(answerValue);
     elemento.find(".message-box-time").text(time);
