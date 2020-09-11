@@ -14,15 +14,23 @@ $(document).ready(function () {
   }
 
   // Funzione che scrive il messaggio.
-  function writeMessage(inputValue) {
+  function writeMessage(inputGenerico) {
 
     var elemento = $(".template-send .box-message-container").clone();
     var time = currentTime();
-    elemento.find("p").text(inputValue);
+    elemento.find("p").text(inputGenerico);
     elemento.find(".message-box-time").text(time);
     $(".chat-screen-section.active").append(elemento);
+
+    // Imposto la funzione di scroll automatico a fondo pagina dopo l'invio del messaggio.
     var currentHeight = $(".chat-screen-section.active").height();
     $(".chat-screen-section.active").scrollTop(currentHeight);
+
+    // Aggiorno l'orario dell'ultimo messaggio inviato nel box contatto.
+    $(".contact-box.active .message-time").text(time);
+
+    // Aggiorno l'ultimo messaggio nel box contatto.
+    $(".contact-box.active p").text(inputGenerico);
   }
 
   // Funzione che risponde al messaggio.
@@ -33,14 +41,22 @@ $(document).ready(function () {
     elemento.find("p").text(answerValue);
     elemento.find(".message-box-time").text(time);
     $(".chat-screen-section.active").append(elemento);
+
+    // Imposto la funzione di scroll automatico a fondo pagina dopo la risposta.
     var currentHeight = $(".chat-screen-section.active").height();
     $(".chat-screen-section.active").scrollTop(currentHeight);
 
+    // Aggiorno l'orario dell'ultimo messaggio ricevuto nel box contatto e anche l'ultimo accesso.
     $(".contact-box.active .message-time").text(time);
+    $(".chat-tools-section time").text(time);
+
+    // Aggiorno l'ultimo messaggio nel box contatto.
+    $(".contact-box.active p").text(answerValue);
+
   }
 
 
-  // Stampo alla pressione del tasto.
+  // Scrivo alla pressione del tasto invio, e ricevo risposta automatica.
   $("#writer").keyup(
     function (event) {
       if (event.which == 13) {
@@ -58,7 +74,7 @@ $(document).ready(function () {
     }
   );
 
-  // Stampo al click sul pulsante.
+  // Scrivo il messaggio al click sul pulsante, e ricevo risposta automatica.
   $(".fa-paper-plane").click(
     function () {
       var inputValue = $("#writer").val();
@@ -93,8 +109,9 @@ $(document).ready(function () {
   //   }
   // );
 
-  // Con questo metodo prende anche l'inserimento con l'incolla del mouse.
 
+
+  // Con questo metodo prende anche l'inserimento con l'incolla del mouse.
   $("#search-writer").on("input", function(){
     $(".contact-box").each(
       function () {
@@ -110,15 +127,14 @@ $(document).ready(function () {
     );
   });
 
-  // Al click sull'icona apro il menu a tendina.
-
+  // Al click sull'icona, apro il menu a tendina.
   $(document).on("click", ".open-menu",
     function () {
       $(this).children(".dropdown-menu").toggle();
     }
   );
 
-  // Quando esco dal menu si nasconde.
+  // Quando esco dal menu, si nasconde.
   $(document).on("mouseleave", ".message-box",
     function () {
       $(this).find(".dropdown-menu").hide();
@@ -150,9 +166,11 @@ $(document).ready(function () {
         $(".chat-tools-section img").attr("src", img);
         $(".chat-tools-section h2").text(nome);
         $(".chat-tools-section time").text(tempo);
+        $(".chat-tools-section span.name").text(nome);
       }
     }
   );
+
 
 
 });

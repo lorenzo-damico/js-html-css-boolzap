@@ -163,6 +163,11 @@ COLONNA CONTATTI
   padding: 6px 6px 6px 12px;
   border-bottom: 1px solid lightgrey;
 }
+.contact-box p {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .contact-box.active {
   background-color: #E9EBEB;
 }
@@ -214,7 +219,6 @@ COLONNA CHAT
   height: 100%;
   width: 100%;
 }
-
 /* FINESTRA CHAT */
 .chat-screen-section {
   height: calc(100% - (50px + 50px));
@@ -260,7 +264,7 @@ COLONNA CHAT
   bottom: 5px;
   right: 5px;
   font-size: 8px;
-  color: lightgrey;
+  color: grey;
 }
 .open-menu {
   position: absolute;
