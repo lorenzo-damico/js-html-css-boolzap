@@ -166,7 +166,6 @@ $(document).ready(function () {
         $(".chat-tools-section img").attr("src", img);
         $(".chat-tools-section h2").text(nome);
         $(".chat-tools-section time").text(tempo);
-        $(".chat-tools-section span.name").text(nome);
       }
     }
   );
