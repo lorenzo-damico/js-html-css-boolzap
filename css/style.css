@@ -5,9 +5,10 @@
 }
 body {
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
 }
 h2 {
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 
@@ -53,7 +54,7 @@ h2 {
 .container-window {
   height: 100%;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1200px;
   margin: auto;
   display: flex;
 }
@@ -77,7 +78,7 @@ COLONNA CONTATTI
 
 /* BARRA UTENTE */
 .user-section {
-  height: 50px;
+  height: 55px;
   width: 100%;
   background-color: #EAEAEA; /* grigio user */
   display: flex;
@@ -114,7 +115,7 @@ COLONNA CONTATTI
   color: #8EDAFC;
 }
 .notification-info {
-  font-size: 10px;
+  font-size: 12px;
   margin-left: 10px;
 }
 .notification-info > a {
@@ -142,24 +143,24 @@ COLONNA CONTATTI
   border: none;
   width: 100%;
   height: 100%;
-  font-size: 11px;
+  font-size: 13px;
 }
 .search-wrapper > a {
   color: #B1B1B1;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0 20px;
 }
 
 /* LISTA CONTATTI */
 .contact-list-section {
-  height: calc(100% - (50px + 55px + 30px));
+  height: calc(100% - (55px + 55px + 30px));
   width: 100%;
   background-color: #fff;
   overflow-y: scroll;
 }
 .contact-box {
   cursor: pointer;
-  height: 50px;
+  height: 55px;
   padding: 6px 12px 6px 12px;
   border-bottom: 1px solid lightgrey;
 }
@@ -174,7 +175,7 @@ COLONNA CONTATTI
   align-self: flex-start;
   color: grey;
   font-weight: 700;
-  font-size: 8px;
+  font-size: 10px;
   padding-top: 5px;
 }
 
@@ -186,7 +187,7 @@ COLONNA CHAT
 
 /* INFO CONTATTO */
 .chat-tools-section {
-  height: 50px;
+  height: 55px;
   width: 100%;
   background-color: #EAEAEA; /* grigio user */
   display: flex;
@@ -207,7 +208,7 @@ COLONNA CHAT
 }
 .info-contatto {
   width: 100%;
-  font-size: 11px;
+  font-size: 12px;
   margin-left: 10px;
 }
 .info-contatto > p {
@@ -219,7 +220,7 @@ COLONNA CHAT
 }
 /* FINESTRA CHAT */
 .chat-screen-section {
-  height: calc(100% - (50px + 50px));
+  height: calc(100% - (55px + 55px));
   width: 100%;
   background-image: url(../img/mine.jpg);
   background-size: 350px;
@@ -242,7 +243,7 @@ COLONNA CHAT
   max-width: 50%;
   padding: 13px 30px 13px 13px;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 15px;
   position: relative;
   margin-bottom: 5px;
   background-color: #fff;
@@ -257,7 +258,7 @@ COLONNA CHAT
   position: absolute;
   bottom: 5px;
   right: 5px;
-  font-size: 8px;
+  font-size: 9px;
   color: grey;
 }
 .open-menu {
@@ -270,7 +271,7 @@ COLONNA CHAT
   display: none;
 }
 .open-menu > a {
-  font-size: 15px;
+  font-size: 16px;
   color: #ccc;
 }
 .message-box:hover .open-menu {
@@ -292,6 +293,9 @@ COLONNA CHAT
   text-decoration: none;
   color: #000;
 }
+.dropdown-menu a:hover {
+  color: blue;
+}
 .template {
   display: none;
 }
@@ -299,22 +303,27 @@ COLONNA CHAT
 
 /* SEZIONE SCRITTURA */
 .chat-write-section {
-  height: 50px;
+  height: 55px;
   width: 100%;
   background-color: #F3EEEA; /* grigio write */
-  padding: 8px 15px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .chat-write-section > input {
-  width: 90%;
+  width: 85%;
   border: none;
   height: 100%;
   border-radius: 5px;
   padding: 10px;
-  font-size: 11px;
+  font-size: 13px;
+  margin: 0 10px;
 }
 .chat-write-section > a {
   color: #6B7376;
+  margin: auto;
+}
+.fa-paper-plane {
+  display: none;
 }

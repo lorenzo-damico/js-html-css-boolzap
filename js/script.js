@@ -72,6 +72,14 @@ $(document).ready(function () {
           $("#writer").val("");
         }
       }
+
+      // Faccio comparire il tasto invio quando digito sulla tastiera.
+      $(".fa-paper-plane").hide();
+      $(".fa-microphone").show();
+      if ($("#writer").val() != "") {
+        $(".fa-paper-plane").show();
+        $(".fa-microphone").hide();
+      }
     }
   );
 
@@ -88,6 +96,10 @@ $(document).ready(function () {
         );
         $("#writer").val("");
       }
+
+      // Scambio l'invio con il microfono quando invio il messaggio.
+      $(".fa-paper-plane").hide();
+      $(".fa-microphone").show();
     }
   );
 
