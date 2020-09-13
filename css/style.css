@@ -215,6 +215,12 @@ COLONNA CHAT
   color: grey;
   font-weight: bold;
 }
+.chat-tools-section .info-contatto > p {
+  display: none;
+}
+.chat-tools-section .info-contatto > p.active {
+  display: block;
+}
 .contatto-icons {
   height: 100%;
 }

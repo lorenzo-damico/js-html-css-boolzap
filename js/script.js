@@ -13,7 +13,7 @@ $(document).ready(function () {
     return time;
   }
 
-  // Funzione che scrive il messaggio.
+  // Funzione che scrive il messaggio contenuto in un certo inputGenerico.
   function writeMessage(inputGenerico) {
 
     var elemento = $(".template .box-message-container").clone();
@@ -34,25 +34,36 @@ $(document).ready(function () {
     $(".contact-box.active p").text(inputGenerico);
   }
 
-  // Funzione che risponde al messaggio.
-  function answerMessage(answerValue) {
+  // Funzione che risponde al messaggio con una certa answerValue e in una chat con un determinato indice.
+  function answerMessage(answerValue, indice) {
+    $(".chat-tools-section p").eq(indice).text("Online");
 
-    var elemento = $(".template .box-message-container").clone();
-    var time = currentTime();
-    elemento.find("p").text(answerValue);
-    elemento.find(".message-box-time").text(time);
-    $(".chat-screen-section.active").append(elemento);
+    setTimeout(
+      function () {
+        $(".chat-tools-section p").eq(indice).text("Sta scrivendo...");
+      }, 2000
+    );
 
-    // Imposto la funzione di scroll automatico a fondo pagina dopo la risposta.
-    var currentHeight = $(".chat-screen-section.active").height();
-    $(".chat-screen-section.active").scrollTop(currentHeight);
+    setTimeout(
+      function () {
+        var elemento = $(".template .box-message-container").clone();
+        var time = currentTime();
+        elemento.find("p").text(answerValue);
+        elemento.find(".message-box-time").text(time);
+        $(".chat-screen-section").eq(indice).append(elemento);
 
-    // Aggiorno l'orario dell'ultimo messaggio ricevuto nel box contatto e anche l'ultimo accesso.
-    $(".contact-box.active .message-time").text(time);
-    $(".chat-tools-section time").text(time);
+        // Imposto la funzione di scroll automatico a fondo pagina dopo la risposta.
+        var currentHeight = $(".chat-screen-section").eq(indice).height();
+        $(".chat-screen-section").eq(indice).scrollTop(currentHeight);
 
-    // Aggiorno l'ultimo messaggio nel box contatto.
-    $(".contact-box.active p").text(answerValue);
+        // Aggiorno l'orario dell'ultimo messaggio ricevuto nel box contatto e anche l'ultimo accesso.
+        $(".contact-box").eq(indice).find(".message-time").text(time);
+        $(".chat-tools-section p").eq(indice).text("Ultimo accesso oggi alle " + time);
+
+        // Aggiorno l'ultimo messaggio nel box contatto.
+        $(".contact-box").eq(indice).find("p").text(answerValue);
+      }, 4000
+    );
 
   }
 
@@ -64,10 +75,11 @@ $(document).ready(function () {
         var inputValue = $("#writer").val();
         if (inputValue != "") {
           writeMessage(inputValue);
+          var indiceChat = $(".chat-screen-section.active").index(".chat-screen-section");
           setTimeout(
             function () {
-              answerMessage("OK");
-            }, 1000
+              answerMessage("OK", indiceChat);
+            }, 2000
           );
           $("#writer").val("");
         }
@@ -89,10 +101,11 @@ $(document).ready(function () {
       var inputValue = $("#writer").val();
       if (inputValue != "") {
         writeMessage(inputValue);
+        var indiceChat = $(".chat-screen-section.active").index(".chat-screen-section");
         setTimeout(
           function () {
-            answerMessage("OK");
-          }, 1000
+            answerMessage("OK", indiceChat);
+          }, 2000
         );
         $("#writer").val("");
       }
@@ -167,18 +180,18 @@ $(document).ready(function () {
       if ($(this).hasClass("active") == false) {
         $(".contact-box").removeClass("active");
         $(".chat-screen-section").removeClass("active");
+        $(".chat-tools-section p").removeClass("active");
 
         var indice = $(".contact-box").index(this);
-
         $(this).addClass("active");
         $(".chat-screen-section").eq(indice).addClass("active");
+        $(".chat-tools-section p").eq(indice).addClass("active");
+
 
         var img = $(this).find("img").attr("src");
         var nome = $(this).find("h2").text();
-        var tempo = $(this).find(".message-time").text();
         $(".chat-tools-section img").attr("src", img);
         $(".chat-tools-section h2").text(nome);
-        $(".chat-tools-section time").text(tempo);
       }
     }
   );
