@@ -329,6 +329,7 @@ COLONNA CHAT
 .chat-write-section > a {
   color: #6B7376;
   margin: auto;
+  text-decoration: none;
 }
 .fa-paper-plane {
   display: none;
